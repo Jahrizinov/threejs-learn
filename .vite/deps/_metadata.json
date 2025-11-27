@@ -1,0 +1,15 @@
+{
+  "hash": "24d4e9be",
+  "configHash": "4cde1f2a",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "cfc736f3",
+  "optimized": {
+    "three": {
+      "src": "../../public-test/node_modules/three/build/three.module.js",
+      "file": "three.js",
+      "fileHash": "2a8ab0b2",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}
