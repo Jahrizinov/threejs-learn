@@ -1,0 +1,21 @@
+PerspectiveCamera has difffernt kind of forms:
+-Field of view = It is the way u seen on the screen
+-Aspect Ratio = important almost 100% use its witdh divided by height
+-Near and Far = its the value of the objest close and far away (for better performance on apps)
+-Renderer = an html element to show us the scene
+-setSize = is used for to make it smaller (window.innerWidth/2, window.innerHeight/2) Or for lower resolution do this (window.innerWidth/2, window.innerHeight/2, false) false = updateStyle its the third argument
+
+
+Creation:
+BoxGeometry = has 3 values (1,1,1) Width Height and Depth
+MeshBasicMaterial = the kind of color u want ({color choice hex colors})
+Mesh = BoxGeometry + MeshBasicMaterial to make a cube color
+scene.add() = makes the cube appear so put mesh in it
+
+how to Renderer a scene u need a funtion with in it renderer.render( scene, camera)
+
+then set it in a loop = renderer.setAnimationLoop( animate )
+
+
+
+
