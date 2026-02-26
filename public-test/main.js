@@ -72,14 +72,14 @@
 
 // ;
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100);
-camera.position.z = 5;
+camera.position.z = 1;
 
 const renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -91,7 +91,7 @@ controls.enableDamping = true;
 // Zwart gat
 const blackHole = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 64, 64),
-    new THREE.MeshBasicMaterial({color:0x000000})
+    new THREE.MeshBasicMaterial({color:0xffff00})
 );
 scene.add(blackHole);
 
