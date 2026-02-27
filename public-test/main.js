@@ -1,6 +1,9 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
+let model;                // je 3D model
+let targetRotation = 0;   // scroll target
+let currentRotation = 0;
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
@@ -20,8 +23,8 @@ light.position.set(5, 5, 5);
 scene.add(light);
 scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-camera.position.set(0, 10, 0)
-camera.lookAt(0, 0, 0)
+camera.position.set(0, 20, 0); // 20 units boven het model
+camera.lookAt(0, 7, -6);      // kijk naar het midden van het model
 
 const loader = new GLTFLoader();
 // loader.load('/Mahoraga Wheel ani.glb', function (gltf) {
@@ -30,31 +33,70 @@ const loader = new GLTFLoader();
 
 let mixer;
 
+
+
 loader.load('/Mahoraga Wheel ani.glb', function (gltf) {
 
-    const model = gltf.scene;
+    model = gltf.scene;
+
+    model.position.set(0,10,-6);   // model in midden
     scene.add(model);
 
     // Animatie
-    mixer = new THREE.AnimationMixer(model);
+    // mixer = new THREE.AnimationMixer(model);
 
-    gltf.animations.forEach((clip) => {
-        mixer.clipAction(clip).play();
-    });
+    // gltf.animations.forEach((clip) => {
+    //     mixer.clipAction(clip).play();
+    // });
 
+});
+
+
+
+
+function updateModelScale() {
+    if(!model) return;
+
+    const width = window.innerWidth;
+
+    if(width > 1200) {
+        model.scale.set(2,2,2);
+    } else if(width > 800) {
+        model.scale.set(0.7,0.7,0.7);
+    } else {
+        model.scale.set(0.5,0.5,0.5);
+    }
+}
+
+// Bij laden
+updateModelScale();
+
+// Bij resize
+window.addEventListener('resize', () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    
+    updateModelScale(); // schaal bijwerken
 });
 
 const clock = new THREE.Clock();
 
+
+window.addEventListener("scroll", () => {
+    targetRotation = window.scrollY * 0.005;
+});
+
+
 function animate() {
     requestAnimationFrame(animate);
 
-    const delta = clock.getDelta();
-
-    if (mixer) mixer.update(delta);
+    if (model) {
+        currentRotation += (targetRotation - currentRotation) * 0.1;
+        model.rotation.y = currentRotation;
+    }
 
     renderer.render(scene, camera);
-
-    model.rotation.y += 0.01;
 }
+
 animate();

@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="img/Tarnished-2.jpg" type="image/x-icon" />
+   
   <title>Blender in Three.js</title>
   <style>
     body { margin: 0; }
@@ -18,9 +37,168 @@
 
 <!-- LAYER 3: Website Content -->
 <div class="content">
-  <h1>Mahoraga Wheel</h1>
-  <p>Adaptive boss system</p>
-  <button>Enter</button>
+   <header class="site-header">
+      <div class="container header-inner">
+        <span class="tagline">Software Developer</span>
+        <nav>
+          <ul>
+            <li><a href="#home-intro" class="active">Home</a></li>
+            <li><a href="#project-start">Projects</a></li>
+            <li>
+              <button id="contactBtnNav" class="nav-contact-btn">
+                Contact
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <img
+          src="img/Tarnished-2.jpg"
+          alt="Een profiel foto van mijn website"
+          id="mini-img"
+        />
+      </div>
+    </header>
+
+    <div id="home-intro" class="reveal-intro-anim">
+      <img
+        src="img/Tarnished-2.jpg"
+        alt="Een profiel foto van mijn website"
+        id="img"
+        class="reveal-float"
+      />
+
+      <div id="intro" class="reveal text-anim">
+        <h1>Hi, ik ben Jahriziño</h1>
+        <p>17 jaar, Software Development student</p>
+        <p>
+          Ik ben gepassioneerd over programmeren en games. Mijn droom is later
+          in de game-industrie te werken.
+        </p>
+      </div>
+    </div>
+
+    <div id="project-start">
+      <h2 id="contact" class="reveal-title-glow">Projecten</h2>
+    </div>
+
+    <div id="project-showcase">
+      <div
+        id="project-photo-card"
+        class="project-photo-card reveal-project right"
+      >
+        <img
+          class="img-size"
+          src="img/Schermafbeelding-2025-12-17-143205_402x500.png"
+          alt="mijn eerste project, het is een quiz"
+        />
+      </div>
+
+      <div
+        id="project-info-card"
+        class="project-photo-card reveal-project left"
+      >
+        <h3 class="project-title">Quiz Project</h3>
+        <p>
+          Dit was het eerste project dat ik samen met mijn team heb gemaakt: een
+          quiz. Mijn quiz ging over films en series en had een speciaal element:
+          een timer. Zodra de tijd voorbij was, kon je geen vragen meer
+          beantwoorden, wat het extra uitdagend maakte. Tijdens dit project heb
+          ik geleerd hoe je een interactieve applicatie bouwt, hoe je logisch
+          nadenkt over de structuur van de quiz en hoe je samenwerkt in een team
+          om een project van begin tot eind af te ronden. De talen die
+          gebruikten werden: Html en Css voor de structuur en Javascript voor de
+          interactie.
+        </p>
+      </div>
+
+      <div
+        id="project-photo-card1"
+        class="project-photo-card reveal-project left"
+      >
+        <img
+          class="img-size"
+          src="img/undercontruction.jpg"
+          alt="Nog geen project gemaakt"
+        />
+      </div>
+
+      <div
+        id="project-info-card1"
+        class="project-photo-card reveal-project right"
+      >
+        <h3 class="project-title">Under construction</h3>
+        <p>Deze project is nog niet klaar om het te laten zien.</p>
+      </div>
+
+      <div
+        id="project-photo-card2"
+        class="project-photo-card reveal-project right"
+      >
+        <img
+          class="img-size"
+          src="img/undercontruction.jpg"
+          alt="Nog geen project gemaakt"
+        />
+      </div>
+
+      <div
+        id="project-info-card2"
+        class="project-photo-card reveal-project left"
+      >
+        <h3 class="project-title">Under construction</h3>
+        <p>Deze project is nog niet klaar om het te laten zien.</p>
+      </div>
+    </div>
+
+    <div id="skills"></div>
+
+    <footer>
+      <a href="Home-Page.html" class="footer-icon"
+        ><i class="fa-solid fa-house"></i
+      ></a>
+      <a
+        href="https://github.com/Jahrizinov"
+        target="_blank"
+        class="footer-icon"
+        ><i class="fa-brands fa-github"></i
+      ></a>
+      <a href="mailto:jouwemail@example.com" class="footer-icon">
+        <i class="fa fa-envelope"></i>
+      </a>
+
+      &copy; 2025 Portfolio by Jahrizinov
+    </footer>
+
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact</h2>
+
+        <form>
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Your email" required />
+          <textarea placeholder="Your message" required></textarea>
+          <button class="submit-btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 
