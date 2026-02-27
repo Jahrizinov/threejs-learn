@@ -21,7 +21,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(5, 5, 5);
 scene.add(light);
-scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+scene.add(new THREE.AmbientLight(0x11111, 0.8));
 
 camera.position.set(0, 20, 0); // 20 units boven het model
 camera.lookAt(0, 7, -6);      // kijk naar het midden van het model
