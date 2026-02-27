@@ -6,7 +6,8 @@ let targetRotation = 0;   // scroll target
 let currentRotation = 0;
 const clickSound = new Audio('audio/Mahoraga Wheel Spin  Adaption Sound Effect.mp3');
 let canPlaySound = true; // true = geluid mag afspelen
-const soundCooldown = 1000; // 1000 ms = 1 seconde cooldow
+const soundCooldown = 3000; // 1000 ms = 1 seconde cooldow
+clickSound.volume = 0.3;
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
@@ -104,7 +105,7 @@ window.addEventListener("scroll", () => {
 
     // check of we near bottom zijn en cooldown actief
     if(isNearBottom() && canPlaySound){
-        clickSound.play();    // speel geluid
+        clickSound.play();
         canPlaySound = false; // blokkeer tijdelijk
         setTimeout(() => canPlaySound = true, soundCooldown); // reset na cooldown
     }
