@@ -1,0 +1,635 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  margin-top: 100px;
+    border:solid 0px var(--bg-border-skeleton) ;
+    background-color: #000;
+    color: white ;
+      font-family: 'IBM Plex Serif', serif;
+  font-weight: 300;
+
+  padding-bottom: 60px; /* ruimte voor footer */
+    
+
+}
+
+/* Layer 1 */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0f0f, #1e1e2f);
+  z-index: 0;
+}
+
+/* Layer 2 */
+#three-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-color: ;
+}
+
+/* Layer 3 */
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+
+:root{
+    --bg-border-skeleton: cyan;
+    --color-lightgray: #d3d3d3;
+    --color-purple: #800080;
+
+}
+
+
+
+/* Fixed header with semi‑transparent background */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Tagline links, nav in het midden, img rechts */
+  width: 100%;
+  max-width: 1200px; /* optioneel, voor nette layout */
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+
+
+footer{
+    color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  padding: 1rem;
+    /* position: fixed; */
+    text-align: center;
+    padding: 10px;
+    /* background-color: black; */
+      box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.4),
+    0 0 60px rgba(255, 0, 0, 0.2);
+      border: 0.5px solid red; /* dunner dan 1px */
+}
+
+.footer-icon {
+  color: white;
+  margin: 0 15px;
+  font-size: 24px;
+  transition: 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #00ffcc;
+  transform: scale(1.2);
+}
+
+
+#mini-img{
+    border:solid 1px var(--bg-border-skeleton) ;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    /* met flex de positie veranderen */
+
+}
+
+
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--color-lightgray);
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--color-purple);
+}
+
+
+
+
+.tagline {
+  font-size: 18px;
+  color: var(--color-lightgray);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+
+
+
+}
+
+
+#home-intro {
+
+  min-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+
+  border: none;
+}
+
+#intro p {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+
+  color: #ffdddd;
+
+  background: rgba(15, 15, 15, 0.55);
+  backdrop-filter: blur(6px);
+
+  display: inline-block;
+}
+
+/* Profielfoto */
+#img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.4),
+    0 0 60px rgba(255, 0, 0, 0.2);
+}
+
+/* Tekst card */
+#intro {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 420px;
+  max-height: 420px;
+  padding: 30px 40px;
+
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(8px);
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.4),
+    0 0 40px rgba(255, 0, 0, 0.2);
+}
+
+
+
+#project-start > h2 {
+  padding-top: 40px;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 300;
+
+  font-size: 64px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: #ffdddd;
+  text-align: center;
+
+
+  -webkit-text-stroke: 1px #300;
+
+  text-shadow:
+    0 0 5px rgba(255, 0, 0, 0.6),
+    0 0 15px rgba(255, 0, 0, 0.8),
+    0 0 40px rgba(255, 0, 0, 0.6);
+}
+
+
+
+#project-showcase{
+    border:solid 3px var(--bg-border-skeleton-PC) ;
+    display: grid;
+    grid-template-columns:2fr 4fr 1fr 1fr 1fr 1fr 4fr 2fr ;
+     grid-template-rows: minmax(50px, auto);
+     grid-template-areas: 
+     ". PPC . . . PIC PIC ."
+     ". PPC1 . . .  PIC1 PIC1 ."
+     ". PPC2 . . . PIC2 PIC2 ."
+     ;
+
+
+}
+
+
+.project-title {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #ffaaaa; /* zacht rood voor contrast met de p */
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow:
+    0 0 3px rgba(255, 0, 0, 0.6),
+    0 0 6px rgba(255, 0, 0, 0.4);
+}
+
+
+#project-photo-card{
+    border:solid 1px var(--bg-border-skeleton) ;
+     margin: 50px;
+     width: 300px;
+     height: 500px;
+     grid-area: PPC;
+     display:flex;
+     align-self: center;
+     object-fit: cover;
+     overflow: hidden;
+     align-items: center;
+     justify-content: center;
+     
+
+}
+
+
+
+.img-size{
+    width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+
+}
+
+
+#project-info-card{
+
+     width: 500px;
+     height: 500px;
+     grid-area: PIC;
+    display:flex;
+     align-self: center;
+
+}
+#project-photo-card1{
+    border:solid 1px var(--bg-border-skeleton) ;
+     margin: 50px;
+     width: 300px;
+     height: 500px;
+     grid-area: PPC1;
+     display:flex;
+     align-self: center;
+
+}
+
+#project-info-card1{
+
+     width: 300px;
+     height: 500px;
+     grid-area: PIC1;
+          display:flex;
+     align-self: center;
+
+}
+#project-photo-card2{
+    border:solid 1px var(--bg-border-skeleton) ;
+     margin: 50px;
+     width: 300px;
+     height: 500px;
+     grid-area: PPC2;
+     display:flex;
+     align-self: center;
+
+}
+
+#project-info-card2{
+
+     width: 300px;
+     height: 500px;
+     grid-area: PIC2;
+          display:flex;
+     align-self: center;
+
+}
+
+#project-info-card,
+#project-info-card1,
+#project-info-card2 {
+    display: flex;
+    flex-direction: column; /* Stapel h3 en p boven elkaar */
+    align-items: center;    /* Centraal horizontaal */
+    justify-content: flex-start; /* Begin bovenaan */
+    width: 350px;
+    height: 500px;
+}
+
+#project-info-card p,
+#project-info-card1 p,
+#project-info-card2 p {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+
+  color: #ffdddd;
+
+  padding: 30px;
+
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(8px);
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.25),
+    0 0 40px rgba(255, 0, 0, 0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
+
+
+/* === SCROLL UP & DOWN PROJECT ANIMATIE === */
+.reveal-project {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal-project.left {
+  transform: translateX(-80px) scale(0.95);
+}
+
+.reveal-project.right {
+  transform: translateX(80px) scale(0.95);
+}
+
+.reveal-project.show {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+
+#home-intro,
+#project-showcase,
+#intro,
+.project-photo-card,
+.project-info-card {
+  position: relative; /* nodig voor z-index */
+  z-index: 1; /* boven de body maar onder header/footer */
+}
+
+#intro h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+#intro p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #d3d3d3;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  /* === HEADER === */
+  .header-inner {
+    flex-direction: row;       /* alles in één rij */
+    align-items: center;       /* verticaal centreren */
+    justify-content: space-between; /* ruimte tussen items */
+    gap: 15px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  /* Profielfoto links */
+  #mini-img {
+    width: 40px;
+    height: 40px;
+    order: 1;
+  }
+
+  /* Tagline naast profielfoto */
+  .tagline {
+    font-size: 16px;
+    text-align: left;
+    order: 2;
+  }
+
+  /* Nav naast tagline */
+  nav {
+    position: static;
+    transform: none;
+    order: 3;
+  }
+
+  nav ul {
+    flex-direction: row; /* naast elkaar */
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+
+.nav-contact-btn {
+  background: none;
+  border: none;
+  color: var(--color-lightgray);
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.3s;
+}
+
+.nav-contact-btn:hover,
+.nav-contact-btn.active {
+  color: var(--color-purple);
+}
+
+
+
+  /* === HOME INTRO === */
+  #home-intro {
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 15px;
+    min-height: auto;
+  }
+
+  #img {
+    width: 160px;
+    height: 160px;
+  }
+
+  #intro {
+    max-width: 250px;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* === PROJECT SHOWCASE === */
+  #project-showcase {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "PPC"
+      "PIC"
+      "PPC1"
+      "PIC1"
+      "PPC2"
+      "PIC2";
+    gap: 15px;
+  }
+
+  #project-photo-card,
+  #project-info-card,
+  #project-photo-card1,
+  #project-info-card1,
+  #project-photo-card2,
+  #project-info-card2 {
+    width: 90%;       /* smaller, past op scherm */
+    max-width: 300px;
+    height: auto;     /* past zich aan de inhoud aan */
+    margin: 0 auto 20px;
+  }
+
+  /* Tekst in info cards kleiner */
+  #project-info-card,
+  #project-info-card1,
+  #project-info-card2 {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Scroll animaties behouden, passen automatisch */
+  .reveal-project {
+    transform: translateY(30px) scale(0.95);
+  }
+
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #111;
+  color: white;
+  width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 10% auto;
+  box-shadow: 0 0 30px purple;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #222;
+  border: none;
+  color: white;
+}
+
+textarea {
+  resize: vertical;     
+  max-height: 200px;    
+  min-height: 80px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.submit-btn{
+    width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #222;
+  border: none;
+  color: white;
+
+
+}
+.nav-contact-btn {
+  background: none;
+  border: none;
+  color: var(--color-lightgray);
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
