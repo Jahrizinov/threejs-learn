@@ -1,208 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;1,300&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="icon" href="img/Tarnished-2.jpg" type="image/x-icon" />
-   
-  <title>Blender in Three.js</title>
-  <style>
-    body { margin: 0; }
-    canvas { display: block; }
-  </style>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Realm Portfolio | Gaming & Horror</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-black text-light font-monospace">
 
-    <!-- LAYER 1: Background -->
-<div class="background"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-danger sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-danger fw-bold" href="#">SHADOW_REALM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">LORE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">MISSIONS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bestiary">BESTIARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#arsenal">ARSENAL</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/your-username" target="_blank">GITHUB</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="#contact">SURVIVE</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- LAYER 2: Three.js Canvas -->
-<canvas id="three-canvas"></canvas>
-
-<!-- LAYER 3: Website Content -->
-<div class="content">
-   <header class="site-header">
-      <div class="container header-inner">
-        <span class="tagline">Software Developer</span>
-        <nav>
-          <ul>
-            <li><a href="#home-intro" class="active">Home</a></li>
-            <li><a href="#project-start">Projects</a></li>
-            <li>
-              <button id="contactBtnNav" class="nav-contact-btn">
-                Contact
-              </button>
-            </li>
-          </ul>
-        </nav>
-        <img
-          src="img/Tarnished-2.jpg"
-          alt="Een profiel foto van mijn website"
-          id="mini-img"
-        />
-      </div>
+    <!-- Hero Section -->
+    <header id="hero" class="py-5 text-center min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden">
+        <!-- Background Image using Bootstrap classes (using an img tag instead of inline style) -->
+        <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=1600" class="position-absolute w-100 h-100 object-fit-cover opacity-25" alt="Horror Background">
+        
+        <div class="container position-relative">
+            <h1 class="display-1 fw-bolder text-danger mb-4 text-uppercase">You Are Not Alone</h1>
+            <p class="lead text-light mb-5 fs-3">Building Nightmares in the Digital Void.</p>
+            <a href="#projects" class="btn btn-outline-danger btn-lg px-5 py-3 fw-bold">ENTER THE ABYSS</a>
+        </div>
     </header>
 
-    <div id="home-intro" class="reveal-intro-anim">
-      <img
-        src="img/Tarnished-2.jpg"
-        alt="Een profiel foto van mijn website"
-        id="img"
-        class="reveal-float"
-      />
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-dark border-top border-bottom border-danger">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="display-4 text-danger mb-4">THE ARCHITECT</h2>
+                    <p class="fs-5">I specialize in creating immersive horror experiences and high-octane gaming interfaces. My code is forged in the darkness, optimized for fear, and deployed into the unknown.</p>
+                    <p class="text-secondary fst-italic">"In the console, no one can hear you scream."</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="p-5 border border-danger rounded-circle d-inline-block">
+                        <span class="display-1 text-danger">☠</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div id="intro" class="reveal text-anim">
-        <h1>Hi, ik ben Jahriziño</h1>
-        <p>17 jaar, Software Development student</p>
-        <p>
-          Ik ben gepassioneerd over programmeren en games. Mijn droom is later
-          in de game-industrie te werken.
-        </p>
-      </div>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="display-4 text-center text-danger mb-5">CURRENT MISSIONS</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card bg-dark border-danger h-100 border-2 shadow-lg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-danger fw-bold">Project: VOID_RUNNER</h5>
+                            <p class="card-text text-secondary">A psychological thriller where the environment reacts to your heartbeat.</p>
+                            <span class="badge bg-danger">In Development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark border-danger h-100 border-2 shadow-lg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-danger fw-bold">Project: CRYPT_KILLER</h5>
+                            <p class="card-text text-secondary">Fast-paced FPS set in an ancient, decaying necropolis.</p>
+                            <span class="badge bg-success">Alpha Stage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark border-danger h-100 border-2 shadow-lg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-danger fw-bold">Project: ECHOES</h5>
+                            <p class="card-text text-secondary">Multiplayer survival horror focusing on sound-based navigation.</p>
+                            <span class="badge bg-warning text-dark">Planning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div id="project-start">
-      <h2 id="contact" class="reveal-title-glow">Projecten</h2>
-    </div>
+    <!-- Bestiary Section -->
+    <section id="bestiary" class="py-5 bg-black border-top border-danger">
+        <div class="container">
+            <h2 class="display-4 text-center text-danger mb-5">THE BESTIARY</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-dark border-danger border-opacity-50 h-100">
+                        <div class="card-header border-danger text-danger small fw-bold">ENTITY_01</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-light">SHADOW_STALKER</h5>
+                            <p class="card-text text-secondary small">Invisible to the naked eye. Only detectable through static in the audio feed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-dark border-danger border-opacity-50 h-100">
+                        <div class="card-header border-danger text-danger small fw-bold">ENTITY_02</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-light">GLITCH_WRAITH</h5>
+                            <p class="card-text text-secondary small">Phases through digital barriers. Feeds on unoptimized code.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-dark border-danger border-opacity-50 h-100">
+                        <div class="card-header border-danger text-danger small fw-bold">ENTITY_03</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-light">VOID_LURKER</h5>
+                            <p class="card-text text-secondary small">Exists in the negative space between pixels. Do not blink.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-dark border-danger border-opacity-50 h-100">
+                        <div class="card-header border-danger text-danger small fw-bold">ENTITY_04</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-light">DATA_SCAVENGER</h5>
+                            <p class="card-text text-secondary small">Corrupts save files. A physical manifestation of lost progress.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div id="project-showcase">
-      <div
-        id="project-photo-card"
-        class="project-photo-card reveal-project right"
-      >
-        <img
-          class="img-size"
-          src="img/Schermafbeelding-2025-12-17-143205_402x500.png"
-          alt="mijn eerste project, het is een quiz"
-        />
-      </div>
+    <!-- Arsenal Section -->
+    <section id="arsenal" class="py-5 bg-dark border-top border-bottom border-danger">
+        <div class="container">
+            <h2 class="display-4 text-center text-danger mb-5">THE ARSENAL</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-md-4">
+                    <div class="p-4 border border-danger text-center mb-3 mb-md-0">
+                        <h4 class="text-danger">NEURAL_LINK</h4>
+                        <p class="text-secondary small">Direct consciousness-to-engine interface. 0ms latency.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-danger text-center mb-3 mb-md-0">
+                        <h4 class="text-danger">VOID_CORE_GPU</h4>
+                        <p class="text-secondary small">Powered by captured stars. Renders nightmares in 16K.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border border-danger text-center">
+                        <h4 class="text-danger">GHOST_KEYBOARD</h4>
+                        <p class="text-secondary small">Keys that exist only when pressed. Haptic feedback from the beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div
-        id="project-info-card"
-        class="project-photo-card reveal-project left"
-      >
-        <h3 class="project-title">Quiz Project</h3>
-        <p>
-          Dit was het eerste project dat ik samen met mijn team heb gemaakt: een
-          quiz. Mijn quiz ging over films en series en had een speciaal element:
-          een timer. Zodra de tijd voorbij was, kon je geen vragen meer
-          beantwoorden, wat het extra uitdagend maakte. Tijdens dit project heb
-          ik geleerd hoe je een interactieve applicatie bouwt, hoe je logisch
-          nadenkt over de structuur van de quiz en hoe je samenwerkt in een team
-          om een project van begin tot eind af te ronden. De talen die
-          gebruikten werden: Html en Css voor de structuur en Javascript voor de
-          interactie.
-        </p>
-      </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark border-top border-danger">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h2 class="display-4 text-danger mb-4">SEND A SIGNAL</h2>
+                    <p class="mb-4">If you dare to collaborate, transmit your message below.</p>
+                    <form>
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-danger small fw-bold">IDENTIFIER</label>
+                            <input type="text" class="form-control bg-black text-light border-danger rounded-0">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-danger small fw-bold">ENCRYPTED_EMAIL</label>
+                            <input type="email" class="form-control bg-black text-light border-danger rounded-0">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-danger small fw-bold">TRANSMISSION_CONTENT</label>
+                            <textarea class="form-control bg-black text-light border-danger rounded-0" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100 py-3 fw-bold rounded-0">INITIATE UPLOAD</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div
-        id="project-photo-card1"
-        class="project-photo-card reveal-project left"
-      >
-        <img
-          class="img-size"
-          src="img/undercontruction.jpg"
-          alt="Nog geen project gemaakt"
-        />
-      </div>
-
-      <div
-        id="project-info-card1"
-        class="project-photo-card reveal-project right"
-      >
-        <h3 class="project-title">Under construction</h3>
-        <p>Deze project is nog niet klaar om het te laten zien.</p>
-      </div>
-
-      <div
-        id="project-photo-card2"
-        class="project-photo-card reveal-project right"
-      >
-        <img
-          class="img-size"
-          src="img/undercontruction.jpg"
-          alt="Nog geen project gemaakt"
-        />
-      </div>
-
-      <div
-        id="project-info-card2"
-        class="project-photo-card reveal-project left"
-      >
-        <h3 class="project-title">Under construction</h3>
-        <p>Deze project is nog niet klaar om het te laten zien.</p>
-      </div>
-    </div>
-
-    <div id="skills"></div>
-
-    <footer>
-      <a href="Home-Page.html" class="footer-icon"
-        ><i class="fa-solid fa-house"></i
-      ></a>
-      <a
-        href="https://github.com/Jahrizinov"
-        target="_blank"
-        class="footer-icon"
-        ><i class="fa-brands fa-github"></i
-      ></a>
-      <a href="mailto:jouwemail@example.com" class="footer-icon">
-        <i class="fa fa-envelope"></i>
-      </a>
-
-      &copy; 2025 Portfolio by Jahrizinov
+    <!-- Footer -->
+    <footer class="py-5 text-center border-top border-danger">
+        <div class="container">
+            <div class="mb-4">
+                <a href="https://github.com/your-username" target="_blank" class="btn btn-outline-danger btn-sm px-4 py-2 fw-bold">ACCESS_SOURCE_CODE</a>
+            </div>
+            <p class="text-secondary small">&copy; 2023 SHADOW_REALM - DO NOT LOOK BEHIND YOU</p>
+        </div>
     </footer>
 
-    <div id="contactModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Contact</h2>
-
-        <form>
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Your email" required />
-          <textarea placeholder="Your message" required></textarea>
-          <button class="submit-btn" type="submit">Send</button>
-        </form>
-      </div>
+    <!-- Warning Modal -->
+    <div class="modal fade" id="warningModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-black border border-danger border-2 rounded-0 shadow-lg">
+                <div class="modal-header border-danger">
+                    <h5 class="modal-title text-danger fw-bold">SENSORY_WARNING</h5>
+                </div>
+                <div class="modal-body text-light">
+                    <p class="fs-5">This digital experience contains high-contrast visuals, atmospheric horror elements, and sudden movements. Do you wish to proceed into the abyss?</p>
+                </div>
+                <div class="modal-footer border-danger">
+                    <button type="button" id="acknowledgeBtn" class="btn btn-outline-danger w-100 py-3 fw-bold rounded-0" data-bs-dismiss="modal">I_UNDERSTAND</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Three.js Canvas Background -->
+    <canvas id="vfx-canvas" class="fixed-top w-100 h-100 z-n1 pe-none"></canvas>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-    <script type="module" src="main.js"></script>
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+    <!-- Custom Effects Script -->
+    <script src="effects.js"></script>
 </body>
 </html>
