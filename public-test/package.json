@@ -1,6 +1,10 @@
 {
+  "scripts": {
+    "dev": "vite"
+  },
   "dependencies": {
-    "three": "^0.181.2"
+    "three": "^0.181.2",
+    "bootstrap": "^5.3.3"
   },
   "devDependencies": {
     "vite": "^7.2.4"
