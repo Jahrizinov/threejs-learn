@@ -375,10 +375,10 @@ input:checked + .toggle-slider::before {
     color: var(--red-bright);
 } */
 
-.nav-link:hover,
+/* .nav-link:hover,
 .nav-link.active {
     color: #ff1a1a; /* lichter rood als active */
-}
+/* } */ 
 
 .nav-link:hover::after {
     width: 100%;
@@ -463,7 +463,7 @@ input:checked + .toggle-slider::before {
 .title-line {
     display: block;
     font-size: clamp(48px, 8vw, 96px);
-    color: var(--white);
+    color: var(--red);
     opacity: 0;
     animation: fadeUp 0.8s ease 0.7s forwards;
 }

@@ -427,13 +427,9 @@ hamburger.addEventListener('click', () => {
 const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode', darkModeToggle.checked);
-});
-
-darkModeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode', darkModeToggle.checked);
     if (darkModeToggle.checked) {
-        particleMaterial.color.set(0xff4444); // lichter rood
+        particleMaterial.color.set(0xff4444);
     } else {
-        particleMaterial.color.set(0xcc0000); // origineel rood
+        particleMaterial.color.set(0xcc0000);
     }
 });
