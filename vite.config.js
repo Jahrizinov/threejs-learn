@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/threejs-learn/public/'
+ base: '/threejs-learn/'
 })
