@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURSED PORTFOLIO | Domain Expansion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/threejs-learn/public/assets/index-BeOvjnkn.js"></script>
+  <link rel="stylesheet" crossorigin href="/threejs-learn/public/assets/index-otCBxdto.css">
+</head>
+<body>
+
+    <!-- Warning Modal -->
+    <div id="domain-warning" class="domain-overlay">
+        <div class="domain-box">
+            <div class="domain-sigil">⚙</div>
+            <h2 class="domain-title">DOMAIN EXPANSION</h2>
+            <p class="domain-subtitle">Infinite Void</p>
+            <p class="domain-text">You are about to enter a cursed domain. High contrast visuals, atmospheric audio and horror elements await. Proceed with caution.</p>
+            <div class="domain-warning-badge">⚠ SENSORY WARNING</div>
+            <button id="enterBtn" class="enter-btn">
+                <span>I ACCEPT THE BINDING VOW</span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Settings Bar -->
+    <div id="settings-bar" class="settings-bar hidden">
+        <div class="settings-inner">
+            <span class="settings-label">⚙ SETTINGS</span>
+            <div class="setting-item">
+                <label class="setting-toggle">
+                    <input type="checkbox" id="audioToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="setting-name">AUDIO</span>
+            </div>
+            <div class="setting-item">
+                <label class="setting-toggle">
+                    <input type="checkbox" id="particleToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="setting-name">PARTICLES</span>
+            </div>
+            <div class="setting-item">
+                <input type="range" id="volumeSlider" min="0" max="100" value="40" class="volume-slider">
+                <span class="setting-name">VOL</span>
+            </div>
+<div class="setting-item">
+    <label class="setting-toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="toggle-slider"></span>
+    </label>
+    <span class="setting-name">DARK MODE</span>
+</div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="main-nav" class="main-nav hidden">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-symbol">⚙</span>
+                <span class="brand-text">CURSED.DEV</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">LORE</a></li>
+                <li><a href="#skilltree" class="nav-link">CURSED TECHNIQUES</a></li>
+                <li><a href="#projects" class="nav-link">MISSIONS</a></li>
+                <li><a href="#goals" class="nav-link">DOMAIN</a></li>
+                <li><a href="#contact" class="nav-link">BINDING VOW</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Canvas Background -->
+    <canvas id="vfx-canvas"></canvas>
+
+    <!-- Main Content -->
+    <main id="main-content" class="hidden">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-tag">CURSED ENERGY DETECTED</div>
+                <h1 class="hero-title">
+                    <span class="title-line">DOMAIN</span>
+                    <span class="title-line accent">EXPANSION</span>
+                </h1>
+                <p class="hero-sub">Building nightmares. Crafting worlds. Forging curses in code.</p>
+                <div class="hero-buttons">
+                    <a href="#skilltree" class="btn-primary">VIEW CURSED TECHNIQUES</a>
+                    <a href="#projects" class="btn-secondary">ENTER THE VOID</a>
+                </div>
+                <div class="hero-scroll-hint">
+                    <span>SCROLL TO DESCEND</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+            <div class="hero-wheel-container">
+                <div class="wheel-glow"></div>
+                <canvas id="wheel-canvas"></canvas>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section reveal">
+            <div class="section-container">
+                <div class="section-tag">// LORE</div>
+                <h2 class="section-title">THE ARCHITECT</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="about-p">I am a developer and 3D artist who builds at the intersection of <span class="text-accent">gaming</span>, <span class="text-accent">horror</span>, and <span class="text-accent">interactive experience</span>.</p>
+                        <p class="about-p">Inspired by the cursed techniques of Jujutsu Kaisen and the brutal difficulty of Elden Ring — my work demands adaptation. Every project is a new cursed technique, refined through iteration.</p>
+                        <p class="about-quote">"To surpass a cursed technique, you must first master it."</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">∞</span>
+                            <span class="stat-label">CURSED ENERGY</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">7</span>
+                            <span class="stat-label">SKILLS MASTERED</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">∞</span>
+                            <span class="stat-label">GOALS LOCKED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skill Tree Section -->
+        <section id="skilltree" class="skilltree-section reveal">
+            <div class="section-container">
+                <div class="section-tag">// CURSED TECHNIQUES</div>
+                <h2 class="section-title">SKILL TREE</h2>
+                <p class="section-sub">Each node represents a mastered or evolving cursed technique. Locked nodes are future domains to conquer.</p>
+
+                <div class="skilltree-wrapper">
+                    <!-- Root -->
+                    <div class="tree-root">
+                        <div class="skill-node root-node active" data-skill="Developer" data-level="5" data-desc="Core identity. The foundation of all cursed techniques.">
+                            <div class="node-inner">
+                                <span class="node-icon">⚙</span>
+                                <span class="node-name">CURSED DEV</span>
+                                <div class="node-stars">★★★★★</div>
+                            </div>
+                            <div class="node-pulse"></div>
+                        </div>
+                    </div>
+
+                    <!-- Branch 1: Languages -->
+                    <div class="tree-branch">
+                        <div class="branch-label">LANGUAGES</div>
+                        <div class="branch-connector"></div>
+                        <div class="branch-nodes">
+                            <div class="skill-node active" data-skill="HTML" data-level="4" data-desc="Structure of the digital world. Near mastered.">
+                                <div class="node-inner">
+                                    <span class="node-icon">〈/〉</span>
+                                    <span class="node-name">HTML</span>
+                                    <div class="node-stars">★★★★☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node active" data-skill="CSS" data-level="4" data-desc="The art of visual cursed techniques. Near mastered.">
+                                <div class="node-inner">
+                                    <span class="node-icon">#</span>
+                                    <span class="node-name">CSS</span>
+                                    <div class="node-stars">★★★★☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node active" data-skill="JavaScript" data-level="3" data-desc="The core cursed language. Growing in power.">
+                                <div class="node-inner">
+                                    <span class="node-icon">JS</span>
+                                    <span class="node-name">JAVASCRIPT</span>
+                                    <div class="node-stars">★★★☆☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node locked" data-skill="Python" data-level="0" data-desc="LOCKED — A new cursed technique awaits acquisition.">
+                                <div class="node-inner">
+                                    <span class="node-icon">🔒</span>
+                                    <span class="node-name">PYTHON</span>
+                                    <div class="node-stars">☆☆☆☆☆</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Branch 2: Tools -->
+                    <div class="tree-branch">
+                        <div class="branch-label">TOOLS</div>
+                        <div class="branch-connector"></div>
+                        <div class="branch-nodes">
+                            <div class="skill-node active" data-skill="VS Code" data-level="3" data-desc="The cursed terminal. Primary weapon of choice.">
+                                <div class="node-inner">
+                                    <span class="node-icon">▶</span>
+                                    <span class="node-name">VS CODE</span>
+                                    <div class="node-stars">★★★☆☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node learning" data-skill="Three.js" data-level="2" data-desc="3D cursed energy manipulation. Still evolving.">
+                                <div class="node-inner">
+                                    <span class="node-icon">△</span>
+                                    <span class="node-name">THREE.JS</span>
+                                    <div class="node-stars">★★☆☆☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node learning" data-skill="Blender" data-level="2" data-desc="Forging 3D curses. The Mahoraga of creation tools.">
+                                <div class="node-inner">
+                                    <span class="node-icon">◎</span>
+                                    <span class="node-name">BLENDER</span>
+                                    <div class="node-stars">★★☆☆☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node learning" data-skill="Vite" data-level="2" data-desc="Speed. Build tool. Cursed efficiency.">
+                                <div class="node-inner">
+                                    <span class="node-icon">⚡</span>
+                                    <span class="node-name">VITE</span>
+                                    <div class="node-stars">★★☆☆☆</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Branch 3: Goals -->
+                    <div class="tree-branch">
+                        <div class="branch-label">FUTURE DOMAIN</div>
+                        <div class="branch-connector"></div>
+                        <div class="branch-nodes">
+                            <div class="skill-node locked" data-skill="Game Dev" data-level="0" data-desc="LOCKED — Create a brutally difficult game. Elden Ring is the inspiration. The domain awaits expansion.">
+                                <div class="node-inner">
+                                    <span class="node-icon">🔒</span>
+                                    <span class="node-name">GAME DEV</span>
+                                    <div class="node-stars">☆☆☆☆☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node locked" data-skill="Game Engine" data-level="0" data-desc="LOCKED — Unity or Godot. The vessel for the cursed game.">
+                                <div class="node-inner">
+                                    <span class="node-icon">🔒</span>
+                                    <span class="node-name">GAME ENGINE</span>
+                                    <div class="node-stars">☆☆☆☆☆</div>
+                                </div>
+                            </div>
+                            <div class="skill-node locked" data-skill="3D Master" data-level="0" data-desc="LOCKED — Full mastery of 3D art and animation in Blender.">
+                                <div class="node-inner">
+                                    <span class="node-icon">🔒</span>
+                                    <span class="node-name">3D MASTER</span>
+                                    <div class="node-stars">☆☆☆☆☆</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Info Panel -->
+                <div id="skill-panel" class="skill-panel hidden">
+                    <div class="panel-header">
+                        <span id="panel-skill-name" class="panel-title">—</span>
+                        <button id="panel-close" class="panel-close">✕</button>
+                    </div>
+                    <div id="panel-stars" class="panel-stars"></div>
+                    <p id="panel-desc" class="panel-desc">—</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section reveal">
+            <div class="section-container">
+                <div class="section-tag">// MISSIONS</div>
+                <h2 class="section-title">COMPLETED MISSIONS</h2>
+                <div class="projects-grid">
+                    <div class="project-card reveal-left">
+                        <div class="card-number">01</div>
+                        <div class="card-status active-status">ACTIVE</div>
+                        <h3 class="card-title">SHADOW REALM</h3>
+                        <p class="card-desc">Horror/gaming portfolio with Three.js particle effects, Mahoraga wheel background and cursed energy aesthetics.</p>
+                        <div class="card-tags">
+                            <span class="tag">Three.js</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Blender</span>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                    <div class="project-card reveal-right">
+                        <div class="card-number">02</div>
+                        <div class="card-status planning-status">PLANNING</div>
+                        <h3 class="card-title">VOID_RUNNER</h3>
+                        <p class="card-desc">A psychological thriller where the environment reacts to your presence. Inspired by Elden Ring's brutal challenge.</p>
+                        <div class="card-tags">
+                            <span class="tag">Game Dev</span>
+                            <span class="tag">Horror</span>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                    <div class="project-card reveal-left">
+                        <div class="card-number">03</div>
+                        <div class="card-status locked-status">LOCKED</div>
+                        <h3 class="card-title">PROJECT: ECHO</h3>
+                        <p class="card-desc">Multiplayer survival horror. Sound-based navigation. No light. Only cursed energy.</p>
+                        <div class="card-tags">
+                            <span class="tag">Multiplayer</span>
+                            <span class="tag">Audio</span>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals Section -->
+        <section id="goals" class="goals-section reveal">
+            <div class="section-container">
+                <div class="section-tag">// FUTURE DOMAIN</div>
+                <h2 class="section-title">THE DOMAIN</h2>
+                <p class="section-sub">These are the cursed techniques yet to be mastered. Locked domains. Future expansions.</p>
+                <div class="goals-grid">
+                    <div class="goal-item">
+                        <div class="goal-icon">⚔</div>
+                        <h3 class="goal-title">ELDEN RING-STYLE GAME</h3>
+                        <p class="goal-desc">A brutally difficult, atmospheric game where every death teaches. Dark world. Cursed enemies. No hand-holding.</p>
+                        <div class="goal-progress">
+                            <div class="progress-bar" style="--progress: 5%"></div>
+                            <span class="progress-label">5% — CONCEPTUAL PHASE</span>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-icon">🎮</div>
+                        <h3 class="goal-title">GAME ENGINE MASTERY</h3>
+                        <p class="goal-desc">Master Unity or Godot. Build the vessel for the cursed game world.</p>
+                        <div class="goal-progress">
+                            <div class="progress-bar" style="--progress: 0%"></div>
+                            <span class="progress-label">LOCKED — NEXT DOMAIN</span>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-icon">◎</div>
+                        <h3 class="goal-title">3D ART MASTERY</h3>
+                        <p class="goal-desc">Full Blender mastery. Characters, environments, animations. The Mahoraga wheel is only the beginning.</p>
+                        <div class="goal-progress">
+                            <div class="progress-bar" style="--progress: 20%"></div>
+                            <span class="progress-label">20% — EVOLVING</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section reveal">
+            <div class="section-container">
+                <div class="section-tag">// BINDING VOW</div>
+                <h2 class="section-title">SEND A SIGNAL</h2>
+                <p class="section-sub">A binding vow requires both parties to commit. Transmit your message — I will respond.</p>
+                <div class="contact-form-wrapper">
+                    <div class="form-field">
+                        <label class="field-label">IDENTIFIER</label>
+                        <input type="text" class="field-input" placeholder="Your name...">
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">ENCRYPTED EMAIL</label>
+                        <input type="email" class="field-input" placeholder="your@email.com">
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">TRANSMISSION</label>
+                        <textarea class="field-input field-textarea" placeholder="Your message..."></textarea>
+                    </div>
+                    <button class="submit-btn">
+                        <span>INITIATE BINDING VOW</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer hidden">
+        <div class="footer-inner">
+            <span class="footer-brand">⚙ CURSED.DEV</span>
+            <p class="footer-text">© 2025 — DO NOT LOOK BEHIND YOU</p>
+            <a href="https://github.com/your-username" target="_blank" class="footer-link">GITHUB</a>
+        </div>
+    </footer>
+
+</body>
+</html>
